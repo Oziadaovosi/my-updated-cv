@@ -65,8 +65,8 @@
   // ------- social link placeholders -------
   // Replace these with your real URLs.
   const links = {
-    linkedin: 'https://www.linkedin.com/in/YOUR-HANDLE/',
-    github:   'https://github.com/YOUR-HANDLE',
+    linkedin: 'https://www.linkedin.com/in/vinbello',
+    github:   'https://github.com/Oziadaovosi',
   };
   document.querySelectorAll('[data-link]').forEach(el => {
     const key = el.getAttribute('data-link');
