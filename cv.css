@@ -1,0 +1,91 @@
+/* CV-specific styles. Print-tuned, also readable on screen. */
+
+body.cv {
+  background: #ece6d6;
+  padding: 40px 20px;
+  font-family: var(--sans);
+}
+body.cv .cv__head {
+  max-width: 820px; margin: 0 auto 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; flex-wrap: wrap;
+  background: #161513; color: #f5f1e8;
+  padding: 16px 22px; border-radius: 12px;
+  border: 1px solid #2a2823;
+}
+body.cv .cv__head h1 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 4px; }
+body.cv .cv__head p { font-size: .9rem; color: #c8c2b3; }
+body.cv .cv__doc {
+  max-width: 820px; margin: 0 auto;
+  background: #fff; color: #161513;
+  padding: 48px 56px;
+  border-radius: 8px;
+  box-shadow: 0 6px 32px rgba(0,0,0,.12);
+  font-size: .96rem; line-height: 1.5;
+}
+body.cv .cv__name h1 {
+  font-family: var(--serif); font-size: 2.4rem; font-weight: 500;
+  letter-spacing: -.015em; margin-bottom: 4px;
+}
+body.cv .cv__title {
+  font-family: var(--mono); font-size: .9rem; color: #4d8b00;
+  letter-spacing: .02em; margin-bottom: 10px;
+}
+body.cv .cv__contact {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  font-family: var(--mono); font-size: .82rem; color: #555;
+  border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;
+  padding: 8px 0; margin-bottom: 28px;
+}
+body.cv .cv__contact li::before { content: '· '; color: #4d8b00; }
+body.cv .cv__contact li:first-child::before { content: ''; }
+body.cv .cv__section { margin-bottom: 24px; }
+body.cv .cv__section h2 {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; color: #4d8b00;
+  border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-bottom: 12px;
+}
+body.cv .cv__role { margin-bottom: 14px; }
+body.cv .cv__role-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 6px; margin-bottom: 4px;
+}
+body.cv .cv__role h3 {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 500;
+}
+body.cv .cv__org { color: #555; font-weight: 400; font-family: var(--sans); }
+body.cv .cv__when {
+  font-family: var(--mono); font-size: .78rem; color: #6b665b;
+}
+body.cv .cv__role ul, body.cv .cv__list {
+  list-style: none; padding-left: 16px;
+}
+body.cv .cv__role li, body.cv .cv__list li {
+  position: relative; margin-bottom: 4px; font-size: .92rem;
+}
+body.cv .cv__role li::before {
+  content: '▸'; position: absolute; left: -14px; color: #4d8b00;
+}
+body.cv .cv__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+body.cv .cv__cols h4 {
+  font-family: var(--serif); font-size: .98rem; font-weight: 500;
+  margin-bottom: 2px;
+}
+body.cv .cv__cols p { font-size: .88rem; color: #444; }
+body.cv .cv__foot { font-family: var(--mono); font-size: .8rem; color: #888; border-top: 1px solid #ddd; padding-top: 12px; }
+
+@media (max-width: 640px) {
+  body.cv { padding: 16px 8px; }
+  body.cv .cv__doc { padding: 28px 22px; }
+  body.cv .cv__cols { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body.cv { background: #fff; padding: 0; }
+  body.cv .cv__head { display: none; }
+  body.cv .cv__doc {
+    box-shadow: none; border-radius: 0; padding: 0;
+    max-width: 100%;
+  }
+  body.cv .cv__section { page-break-inside: avoid; }
+}
